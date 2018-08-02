@@ -1,0 +1,11 @@
+---
+ - name: Setup a login user barun
+   hosts: all  
+   tasks:
+   - name: Adding user barun
+     user: name=admin
+        #password is 
+        password='$6$JVCalPBqyM2YW3Yd$7brsk.DJIoAXeGF5E1FpnNrUJn7aafzv3havb8/WrHYtaR4RIymO2HOFjI3bQkjNmft8X3htJtqz8kBzRkRmu/' groups=seamless 
+        state=present 
+        shell=/bin/bash 
+        home=/home/barun
