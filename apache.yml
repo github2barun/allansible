@@ -1,0 +1,13 @@
+---
+
+- name : Sets up basic Apache 
+  hosts: webservers
+  tasks:
+  - name: Installing httpd by yum
+    yum: pkg=httpd state=present
+
+  - name: Copy standard index.html
+    file: src=index.html dest=/var/www/html/index.html
+  
+  - name: Httpd service config  
+    service: name=httpd state=restarted enabled=yes
