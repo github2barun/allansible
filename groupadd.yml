@@ -1,0 +1,6 @@
+---
+- name: Set a new group name <XXX>
+  hosts: all
+  tasks:
+  - name: Adding group <XXX>
+    group: name=<XXX> state=present
