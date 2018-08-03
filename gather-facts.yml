@@ -1,0 +1,12 @@
+---
+- hosts: web1
+  tasks:
+    - name: Demonstration of gather facts 
+      copy:
+        dest: /var/www/html/index.html
+        content: "Hi! I am barun runnng this plays on the host: {{ ansible_hostname }} and I run on the kernel:- {{ ansible_kernel }} and the flavour is {{ ansible_os_family}} "
+      register: index_var
+
+    - name: gather facts and store in a variable
+      debug:
+        msg: "{{ index_var }}"  
