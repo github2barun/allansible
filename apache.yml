@@ -1,7 +1,7 @@
 ---
 
 - name : Sets up basic Apache 
-  hosts: webservers
+  hosts: web1
   tasks:
   - name: Installing httpd by yum
     yum: pkg=httpd state=present
